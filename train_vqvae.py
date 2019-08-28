@@ -73,7 +73,7 @@ def train(epoch, loader, model, optimizer, scheduler, device):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--size', type=int, default=256)
-    parser.add_argument('--epoch', type=int, default=560)
+    parser.add_argument('--epoch', type=int, default=50) #original value 560
     parser.add_argument('--lr', type=float, default=3e-4)
     parser.add_argument('--sched', type=str)
     parser.add_argument('path', type=str)
@@ -108,5 +108,5 @@ if __name__ == '__main__':
     for i in range(args.epoch):
         train(i, loader, model, optimizer, scheduler, device)
         torch.save(
-            model.module.state_dict(), f'checkpoint/vqvae_{str(i + 1).zfill(3)}.pt'
+            model.module.state_dict(), f'/content/drive/My Drive/Weight Files/VQ-VAE-2/checkpoint/vqvae_{str(i + 1).zfill(3)}.pt'
         )

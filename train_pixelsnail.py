@@ -69,8 +69,8 @@ class PixelTransform:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--batch', type=int, default=32)
-    parser.add_argument('--epoch', type=int, default=420)
+    parser.add_argument('--batch', type=int, default=8)#original 32
+    parser.add_argument('--epoch', type=int, default=40)#original 420
     parser.add_argument('--hier', type=str, default='top')
     parser.add_argument('--lr', type=float, default=3e-4)
     parser.add_argument('--channel', type=int, default=256)
@@ -151,5 +151,5 @@ if __name__ == '__main__':
         train(args, i, loader, model, optimizer, scheduler, device)
         torch.save(
             {'model': model.module.state_dict(), 'args': args},
-            f'checkpoint/pixelsnail_{args.hier}_{str(i + 1).zfill(3)}.pt',
+            f'/content/drive/My Drive/Weight Files/VQ-VAE-2/checkpoint/pixelsnail_{args.hier}_{str(i + 1).zfill(3)}.pt',
         )
