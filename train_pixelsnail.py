@@ -69,8 +69,8 @@ class PixelTransform:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--batch', type=int, default=8)#original 32
-    parser.add_argument('--epoch', type=int, default=40)#original 420
+    parser.add_argument('--batch', type=int, default=32)#original 32
+    parser.add_argument('--epoch', type=int, default=420)#original 420
     parser.add_argument('--hier', type=str, default='top')
     parser.add_argument('--lr', type=float, default=3e-4)
     parser.add_argument('--channel', type=int, default=256)
